@@ -1,6 +1,6 @@
 carrinho = []
 
-def inserir_item(codigo, nome, descricao, valor):
+def add_item(codigo, nome, descricao, valor):
     item = {
         'codigo': codigo,
         'nome': nome,
@@ -11,7 +11,7 @@ def inserir_item(codigo, nome, descricao, valor):
         'total': valor
     }
     carrinho.append(item)
-    print('Item inserido com sucesso!')
+    print('Item adicionado com sucesso!')
     mostrar_estado_atual()
 
 def mostrar_estado_atual():
@@ -26,7 +26,7 @@ def mostrar_estado_atual():
         print(f'Total: R${item['total']:.2f}')
         print('-' * 40)
 
-def encontrar_item(codigo):
+def buscar_item(codigo):
     for item in carrinho:
         if item['codigo'] == codigo:
             return item

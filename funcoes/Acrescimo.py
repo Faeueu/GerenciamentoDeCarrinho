@@ -1,7 +1,7 @@
-from carrinho.Carrinho import encontrar_item, mostrar_estado_atual
+from carrinho.Carrinho import buscar_item, mostrar_estado_atual
 
-def aplicar_acrescimo_item(codigo, acrescimo):
-    item = encontrar_item(codigo)
+def aplicar_acrescimo(codigo, acrescimo):
+    item = buscar_item(codigo)
     if item:
         item['acrescimo'] += acrescimo
         item['total'] += acrescimo
@@ -9,7 +9,7 @@ def aplicar_acrescimo_item(codigo, acrescimo):
         mostrar_estado_atual()
 
 
-def distribuir_acrescimo_total(carrinho, acrescimo_total):
+def aplicar_acrescimo_total(carrinho, acrescimo_total):
     if carrinho:
         acrescimo_por_item = acrescimo_total / len(carrinho)
         for item in carrinho:

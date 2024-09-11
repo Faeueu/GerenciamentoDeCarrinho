@@ -1,7 +1,7 @@
-from carrinho.Carrinho import encontrar_item, mostrar_estado_atual
+from carrinho.Carrinho import buscar_item, mostrar_estado_atual
 
-def aplicar_desconto_item(codigo, desconto):
-    item = encontrar_item(codigo)
+def aplicar_desconto(codigo, desconto):
+    item = buscar_item(codigo)
     if item:
         item['desconto'] += desconto
         item['total'] -= desconto
@@ -9,7 +9,7 @@ def aplicar_desconto_item(codigo, desconto):
         mostrar_estado_atual()
 
 
-def distribuir_desconto_total(carrinho, desconto_total):
+def aplicar_desconto_total(carrinho, desconto_total):
     if carrinho:
         desconto_por_item = desconto_total / len(carrinho)
         for item in carrinho:
